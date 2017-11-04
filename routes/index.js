@@ -384,9 +384,11 @@ router.post('/login',function(req,res)
 router.post('/profile_photo_email',function(req,res,next)
 {
      var collection=_db.collection("users");
-     var filename=id(8);
+     var filename=id(8)+".jpg";
+     console.log(req.body.email);
      collection.updateOne({"email":req.body.email},{$set: {"filename":filename}},function(err,ok)
-    {
+        {
+            console.log("ew");
           if(err)
           {
               console.log(err);
@@ -466,11 +468,11 @@ router.post('/profile_upload',function(req,res,next)       //PROFILE UPLOAD
     console.log("get");
     var form = new formidable.IncomingForm();
     form.multiples = false;
-    form.uploadDir = path.join("./assets/images/profileimages/");
+    form.uploadDir = "./public/assets/images/profileimages/";
     form.on('file', function(field, file) {
         fs.rename(file.path, path.join(form.uploadDir,file.name), function(err)
         {
-            console.log("succesfully  renamed");
+            console.log("successfully  renamed");
         });
     });
     form.on('error', function(err) {

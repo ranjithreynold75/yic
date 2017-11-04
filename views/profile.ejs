@@ -182,10 +182,7 @@
                 url: '/profile_photo_email',
                 type: 'POST',
                 data: {'email':localStorage.getItem("email")},
-                processData: false,
-                contentType: false,
                 complete: function (r) {
-                    alert(r.responseText);
                     id=r.responseText;
                     upload_image(id);
                 }
@@ -209,7 +206,6 @@
                     processData: false,
                     contentType: false,
                     complete: function (r) {
-                        alert(r.responseText);
                         if(r.responseText=='success')
                         {
                             $('#myModal').find('.close').click();
