@@ -218,7 +218,6 @@ router.post('/user_invite',function(req,res){
             {
                 console.log("yes");
                 yic_id(req,res,gid);
-
             }
         }
     });
@@ -381,48 +380,12 @@ router.post('/login',function(req,res)
     });
 });
 
-/*var getcount=function(req,collection)
-{
-    collection.find({"list" : "guestemails"}).forEach(function(x)
-    {
-        var cc=x.count;
-        ++cc;
-        setcount(req,collection,cc);
-    });
-}*/
-/*var setcount=function(req,collection,cc)
-{
-    collection.updateOne({"list" : "guestemails"},{$set:{"count":cc}},function(err,ok)
-    {
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        {
-            console.log("count updated");
-            pushemail(req,collection);
-        }
-    });
-}*/
-/*var pushemail=function(req,collection)
-{
-    collection.update({"list":"guestemails"},{$push:{"email":req.body.email}},function(err,k){
-        if(err)
-        {
-            console.log("err");
-        }
-        else
-        {
-            console.log("email updated");
-        }
-    });
-}*/
+
 router.post('/profile_photo_email',function(req,res,next)
 {
-     var collection=_db.collection("images_id");
-     var filename=id(8)+".jpg";
-     collection.insertOne({"email":req.body.email,"filename":filename},function(err,ok)
+     var collection=_db.collection("users");
+     var filename=id(8);
+     collection.updateOne({"email":req.body.email},{$set: {"filename":filename}},function(err,ok)
     {
           if(err)
           {
@@ -439,33 +402,29 @@ router.post('/profile_photo_email',function(req,res,next)
 
 router.post('/guest_login',function(req,res)     //GUEST LOGIN
 {
-var email=req.body.email;
-console.log(email);
-var h=_db.collection("guest_email");
-var cursor=h.find({_id:email});
-
-    cursor.count(function (err,c){
-        if(err){
+    var email = req.body.email;
+    console.log(email);
+    var h = _db.collection("guest_email");
+    var cursor = h.find({_id: email});
+    cursor.count(function (err, c) {
+        if (err) {
             console.log(err);
         }
-        else
-        {
-            if(c===1)
-            {
-               h.find({_id:email}).forEach(function (doc) {
-                  //console.log(doc.visits);
-                     var visits=doc.visits;
-                     visits++;
-                     h.updateOne({_id:email},{$set:{visits:visits}});
-               res.send("success");
-               });
+        else {
+            if (c === 1) {
+                h.find({_id: email}).forEach(function (doc) {
+                    //console.log(doc.visits);
+                    var visits = doc.visits;
+                    visits++;
+                    h.updateOne({_id: email}, {$set: {visits: visits}});
+                    res.send("success");
+                });
             }
-            else
-            {
-                var data={
-                  _id:email,
-                    visits:1,
-                    role:"guest"
+            else {
+                var data = {
+                    _id: email,
+                    visits: 1,
+                    role: "guest"
                 };
 
                 h.insertOne(data);
@@ -473,9 +432,30 @@ var cursor=h.find({_id:email});
             }
         }
     });
+});
 
 
 
+router.post("/forgot_password",function(req,res,next) {
+     var collection=_db.collection("email");
+     var cursor=collection.find({_id:req.body.email});
+     cursor.count(function(err,ok)
+     {
+         if(ok===1)
+         {
+             console.log("You are a valid user");
+             collection.updateone({_id:req.body.email},{$set:{"up":"n"}});
+             collection.find({_id:req.body.email}).forEach(function(x)
+             {
+                 var uid=x.id;
+                 send_invite(req.body.email,uid);
+             });
+         }
+         else
+         {
+            console.log("You are an invalid user");
+         }
+     });
 
 });
 
@@ -494,60 +474,13 @@ router.post('/profile_upload',function(req,res,next)       //PROFILE UPLOAD
         });
     });
     form.on('error', function(err) {
-        console.log('An error has occured: \n' + err);
+        console.log('error has occured' + err);
     });
     form.on('end', function() {
         res.end('success');
     });
     form.parse(req);
-
-    /*var storage	=multer.diskStorage({
-        destination: function (req, file, callback) {
-            callback(null, __dirname+"/public/assets/images/profileimages/");
-        },
-        filename: function (req, file, callback) {
-            callback(null, id(8)+".jpg");
-        }
-    });
-    var upload = multer({ storage : storage}).single("profile_photo");
-    console.log("get");
-    upload(req,res,function(err) {
-        if(err)
-        {
-            console.log("error occurs while uploaded");
-        }
-        else
-        {
-            console.log("success");
-            res.send("success");
-        }
-    });*/
-
-   /* fs.readFile(req.file.path,function(err,data)
-    {
-        if(err)
-        {
-            console.log(err);
-        }
-        else
-        {
-            var filepath=__dirname+"/public/assests/images/profileimages/"+id(8)+".jpg";
-            fs.writeFile(filepath,data,function(err,k)
-            {
-                if(err)
-                {
-                    console.log(err);
-                }
-                else
-                {
-                    console.log("successfully stored in the images folder");
-                    res.send("success");
-                }
-            });
-        }
-    });*/
 });
-
 router.get('/home', function(req, res, next) {
     console.log("home");
     res.render('home', { title: 'YIC' });
