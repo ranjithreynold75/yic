@@ -402,33 +402,29 @@ router.post('/profile_photo_email',function(req,res,next)
 
 router.post('/guest_login',function(req,res)     //GUEST LOGIN
 {
-var email=req.body.email;
-console.log(email);
-var h=_db.collection("guest_email");
-var cursor=h.find({_id:email});
-
-    cursor.count(function (err,c){
-        if(err){
+    var email = req.body.email;
+    console.log(email);
+    var h = _db.collection("guest_email");
+    var cursor = h.find({_id: email});
+    cursor.count(function (err, c) {
+        if (err) {
             console.log(err);
         }
-        else
-        {
-            if(c===1)
-            {
-               h.find({_id:email}).forEach(function (doc) {
-                  //console.log(doc.visits);
-                     var visits=doc.visits;
-                     visits++;
-                     h.updateOne({_id:email},{$set:{visits:visits}});
-               res.send("success");
-               });
+        else {
+            if (c === 1) {
+                h.find({_id: email}).forEach(function (doc) {
+                    //console.log(doc.visits);
+                    var visits = doc.visits;
+                    visits++;
+                    h.updateOne({_id: email}, {$set: {visits: visits}});
+                    res.send("success");
+                });
             }
-            else
-            {
-                var data={
-                  _id:email,
-                    visits:1,
-                    role:"guest"
+            else {
+                var data = {
+                    _id: email,
+                    visits: 1,
+                    role: "guest"
                 };
 
                 h.insertOne(data);
@@ -436,6 +432,7 @@ var cursor=h.find({_id:email});
             }
         }
     });
+});
 
 
 
