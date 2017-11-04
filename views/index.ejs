@@ -585,7 +585,7 @@
                     <div class="col-lg-offset-2">
                         <div class="col-xs-10">
                             <div class="input-group">
-                                <input id="email" type="text" class="form-control input-lg" name="email" placeholder="Email">
+                                <input id="guest_email" type="text" class="form-control input-lg" name="email" placeholder="Email">
                                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
                             </div>
                         </div>
@@ -593,7 +593,7 @@
                     </br>
                     </br>
                     <div class="col-lg-offset-5">
-                        <button id="login_button" class="btn btn-info">Sign in</button>
+                        <button id="guest_login_button" class="btn btn-info">Sign in</button>
                     </div>
                 </form>
             </div>
@@ -642,6 +642,18 @@
 
         })
 
+        $('#guest_login_button').on('click',function (e) {
+            e.preventDefault();
+            var email=$('#guest_email').val();
+            if(!email.length>0)
+            {
+                $('#snackbar').text("Enter your email id");
+                myFunction();
+            }
+            else{
+                validatelogin1(email);
+            }
+        });
     });
     function validatelogin(user,pass) {
         var emailReg =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -663,6 +675,41 @@
                 success: function(response) {
                     if(response=='success')
                     {
+                        localStorage.setItem("email", user);
+                        window.location.href='/home';
+                    }
+                    else
+                    {
+                        $('#snackbar').text("Invalid Credentials");
+                        myFunction();
+                    }
+                },
+                error: function(xhr, status, error) {
+
+                }
+            });
+        }
+    }
+    function validatelogin1(user) {
+        var emailReg =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (!emailReg.test(user)) {
+            $('#snackbar').text("Invalid email");
+            myFunction();
+        }
+        else
+        {
+            $('#snackbar').text("Sending Request");
+            myFunction();
+            $.ajax({
+                url: '/guest_login',
+                type: "POST",
+                data: {
+                    email: user
+                },
+                success: function(response) {
+                    if(response=='success')
+                    {
+                        localStorage.setItem("email", user);
                         window.location.href='/home';
                     }
                     else

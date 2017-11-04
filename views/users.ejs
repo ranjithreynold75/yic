@@ -1,13 +1,133 @@
 <div class="container-fluid">
-    <div class="panel panel-headline">
-        <div class="panel-heading">
+    <div style="background-color: white;padding: 2%">
+        <div>
             <div class="row">
                 <div class="col-md-3">
-                    <p style="font-size: 1.5em">Users</p>
+                    <p style="font-size: 1.5em;padding-left: 10%">Users</p>
                 </div>
                 <div class="pull-right col-md-1">
-                    <button type="button" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square" style="color: #0c8ec3;font-size: 2.0em"></i>
+                    <button type="button" style="background-color: transparent;border: 0px" data-toggle="modal" data-target="#myModal"><i class="fa fa-plus-square" style="color: #0c8ec3;font-size: 2.0em"></i>
                     </button>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div id="main_user_content">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Super Admin</h3>
+                                <div class="right">
+                                    <button type="button" class="btn-toggle-collapse"><i
+                                                class="lnr lnr-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div>0 Members</div>
+                            </div>
+                            <div class="panel-footer">
+                                <div>View All<i class="lnr lnr-arrow-right pull-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Admin</h3>
+                                <div class="right">
+                                    <button type="button" class="btn-toggle-collapse"><i
+                                                class="lnr lnr-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div>0 Members</div>
+                            </div>
+                            <div class="panel-footer">
+                                <div>View All<i class="lnr lnr-arrow-right pull-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Innovator</h3>
+                                <div class="right">
+                                    <button type="button" class="btn-toggle-collapse"><i
+                                                class="lnr lnr-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div>0 Members</div>
+                            </div>
+                            <div class="panel-footer">
+                                <div>View All<i class="lnr lnr-arrow-right pull-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Mentor</h3>
+                                <div class="right">
+                                    <button type="button" class="btn-toggle-collapse"><i
+                                                class="lnr lnr-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div>0 Members</div>
+                            </div>
+                            <div class="panel-footer">
+                                <div>View All<i class="lnr lnr-arrow-right pull-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Academic patner</h3>
+                                <div class="right">
+                                    <button type="button" class="btn-toggle-collapse"><i
+                                                class="lnr lnr-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div>0 Members</div>
+                            </div>
+                            <div class="panel-footer">
+                                <div>View All<i class="lnr lnr-arrow-right pull-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="panel">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Guest</h3>
+                                <div class="right">
+                                    <button type="button" class="btn-toggle-collapse"><i
+                                                class="lnr lnr-question-circle"></i></button>
+                                </div>
+                            </div>
+                            <div class="panel-body">
+                                <div>0 Members</div>
+                            </div>
+                            <div class="panel-footer">
+                                <div>View All<i class="lnr lnr-arrow-right pull-right"></i></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="show_content">
+            <div class="row">
+                <div class="col-md-5" style="margin-left: 1%">
+                    <div id="content" style="padding: 2%"></div>
+                </div>
+                <div class="col-md-2 pull-right">
+                    <button class="btn"><i class="lnr lnr-arrow-left"></i>&nbsp;&nbsp;Go Back</button>
                 </div>
             </div>
         </div>
@@ -49,10 +169,9 @@
                                             <option value="superadmin">Super Admin</option>
                                             <option value="admin">Admin</option>
                                             <option value="leader">Leader</option>
-                                            <option value="mentor">Mentor</option>
+                                            <option value="innovator">Mentor</option>
                                             <option value="innovator">Innovator</option>
-                                            <option value="acad_patner">Academic Patner</option>
-                                            <option value="guest">Guest</option>
+                                            <option>Guest</option>
                                         </select>
                                     </div>
                                 </form>
@@ -98,6 +217,18 @@
                 });
             });
 
+            $('.panel .panel-footer').on('click',function (e) {
+                var d=$(this).parent('.panel').find('.panel-title').text();
+                $('#main_user_content, #show_content').slideToggle('medium',function(e){
+                    $('#show_content').find('#content').text('No '+d+' Added');
+                });
+            });
+
+            $('#show_content').find('.row .col-md-2 button').on('click',function (e) {
+                e.preventDefault();
+                $('#show_content, #main_user_content').slideToggle('medium');
+            })
+
             function validateEmail(name, email, role) {
                 var emailReg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
                 if (!emailReg.test(email)) {
@@ -117,7 +248,7 @@
                         success: function (response) {
 
                         },
-                        complete:function (r) {
+                        complete: function (r) {
                             alert(r.responseText);
                         },
                         error: function (xhr, status, error) {
@@ -137,3 +268,19 @@
         }
     </script>
 </div>
+<script src="assets/scripts/main.js"></script>
+<style>
+    .panel, .panel-footer,#show_content .row .col-md-2 button {
+        background-color: #0b5b97;
+        color: white;
+    }
+
+    .panel .panel-footer:hover {
+        background-color: #073a63;
+        color: white;
+    }
+
+    #show_content{
+        display: none;
+    }
+</style>
