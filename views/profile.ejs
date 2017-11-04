@@ -6,7 +6,7 @@
             <div class="profile-header">
                 <div class="overlay"></div>
                 <div class="profile-main">
-                    <img src="assets/img/user-medium.png" class="img-circle" alt="Avatar">
+                    <img id="profile_pic" class="img-circle" alt="Avatar">
                     <h3 class="name"></h3>
                     <span class="btn btn-block btn-primary" data-toggle="modal" data-target="#myModal">Upload Profile Picture</span>
                 </div>
@@ -176,22 +176,25 @@
 </div>
 <script>
     $(document).ready(function () {
-        $('#profile_photo_upload').on('click', function() {
-            var id='';
-            $.ajax({
-                url: '/profile_photo_email',
-                type: 'POST',
-                data: {'email':localStorage.getItem("email")},
-                complete: function (r) {
-                    id=r.responseText;
-                    upload_image(id);
-                }
-            });
-
+        $('#profile_pic').attr({src:'http://'+window.location.host+'/assets/images/profileimages/'+localStorage.getItem('profile_id')});
+        var size=0;
+        $('#upload-input').on('change', function(evt) {
+            size=this.files[0].size;
         });
-        function upload_image(id) {
+        $('#profile_photo_upload').on('click', function() {
+            if(size>30000)
+            {
+                $('#snackbar').text("Please choose profile image less than 30MB");
+                myFunction();
+            }
+            else
+            {
+                upload_image(localStorage.getItem("profile_id"));
+            }
+        });
+        function upload_image(id)
+        {
             var files = $("#upload-input").get(0).files;
-
             if (files.length > 0) {
                 var formData = new FormData();
                 for (var i = 0; i < files.length; i++) {

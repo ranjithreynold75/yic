@@ -294,16 +294,17 @@ router.get("/signup",function(req,res) {
 });
 
 
-var fun=function (req,res,email,name,role,id,crypted) {
+var fun=function (req,res,email,name,role,id1,crypted) {
 
 
+    var p_id=id(8)+".jpg";
     var data={
-        _id:id,
+        _id:id1,
         email:email,
         name:name,
         role:role,
         password:crypted,
-        profileid:id(8)+".jpg"
+        profile_id:p_id
     };
 
     var h=_db.collection("users");
@@ -325,14 +326,14 @@ var s_user=function(req,res,user_id){
     crypted += cipher.final("hex");
     console.log("ENCRYPTION PASSWORD:"+crypted);
     var h=_db.collection("email");
-    var email,name,role,id;
+    var email,name,role,id1;
     h.find({id:user_id}).forEach(function(x){
         JSON.stringify(x);
         email=x._id;
         name=x.name;
         role=x.role;
-        id=x.yic_id;
-        fun(req,res,email,name,role,id,crypted);
+        id1=x.yic_id;
+        fun(req,res,email,name,role,id1,crypted);
     });
 
 
@@ -355,8 +356,6 @@ router.post('/signup_user',function(req,res){
     {
         res.send("fail");
     }
-
-
 });
 
 router.post('/login',function(req,res)
@@ -419,7 +418,7 @@ router.post('/profile_photo_email',function(req,res,next)
          }
      });
 });
-router.post("/getprofile_id",function(req,res,next)
+router.post("/get_profile_id",function(req,res,next)
 {
     var collection=_db.collection("users");
     var cursor2=collection.find({"email":req.body.email});
@@ -435,7 +434,7 @@ router.post("/getprofile_id",function(req,res,next)
            {
               collection.find({"email":req.body.email}).forEach(function(x)
               {
-                 var filename=x.profileid;
+                 var filename=x.profile_id;
                  res.send(filename);
               });
            }
