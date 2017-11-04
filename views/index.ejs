@@ -619,6 +619,30 @@
 <script src="assets/scripts/common.js"></script>
 <script>
     $(document).ready(function () {
+        var profile_id='';
+        $.ajax({
+            url: '/login',
+            type: "POST",
+            data: {
+                email: localStorage.getItem("email")
+            },
+            success: function(response) {
+                if(response=='success')
+                {
+                    localStorage.setItem("email", user);
+                    window.location.href='/home';
+                }
+                else
+                {
+                    $('#snackbar').text("Invalid Credentials");
+                    myFunction();
+                }
+            },
+            error: function(xhr, status, error) {
+
+            }
+        });
+
         $('#login_button').on('click',function (e) {
             e.preventDefault();
             var  user=$('#email').val();

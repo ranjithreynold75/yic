@@ -28,6 +28,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
+
+            $.ajax({
+                url: '/get_profile_id',
+                type: "POST",
+                data: {'email':localStorage.getItem("email")},
+                success: function (response) {
+
+                },
+                complete: function (r) {
+                    localStorage.setItem("profile_id",r.responseText);
+                    set_profile_pic();
+                },
+                error: function (xhr, status, error) {
+                }
+            });
+
             $(".main-content").load('/dashboard');
             $('#nav_dashboard').on('click',function (e) {
                 e.preventDefault();
@@ -67,6 +83,10 @@
             function remove_add_active(name) {
                 $('.nav li a').removeClass('active');
                 $('#'+name +' a').addClass('active');
+            }
+
+            function set_profile_pic() {
+                $('#nav_pro_pic').attr({src:'http://'+window.location.host+'/assets/images/profileimages/'+localStorage.getItem('profile_id')});
             }
             });
     </script>
@@ -149,7 +169,7 @@
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img id="nav_pro_pic"  alt="Avatar" style="height: 25px;width: 25px;border-radius: 40%"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li id="nav_profile"><a><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
                             <li><a><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
