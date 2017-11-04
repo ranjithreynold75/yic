@@ -249,7 +249,7 @@ router.get('/signup_autho',function(req,res){
                         if(x.up==="n")
                         {
                             var ses=req.session
-                            ses.user_valid="y";;
+                            ses.user_valid="y";
                             ses.user_id=req.query.id;
                             console.log("user visited "+req.query.email);
                             /*  var h=_db.collection("email");
@@ -302,7 +302,8 @@ var fun=function (req,res,email,name,role,id,crypted) {
         email:email,
         name:name,
         role:role,
-        password:crypted
+        password:crypted,
+        profileid:id(8)+".jpg"
     };
 
     var h=_db.collection("users");
@@ -364,7 +365,10 @@ router.post('/login',function(req,res)
     collection2.find({"email":req.body.email}).forEach(function(x){
       var e=x.email;
       var p=x.password;
-      if((e===req.body.email)&&(p===req.body.password))
+      var decipher=crypto.createDecipher("aes-256-ctr","d6F3Efeq");
+      var dec=decipher.update(p,"hex","utf8");
+      dec +=decipher.final("utf8");
+      if((e===req.body.email)&&(dec===req.body.password))
       {
           //var dashses=req.session;
           //dashses.email=req.body.email;
@@ -379,29 +383,69 @@ router.post('/login',function(req,res)
       }
     });
 });
-
-
 router.post('/profile_photo_email',function(req,res,next)
 {
      var collection=_db.collection("users");
-     var filename=id(8)+".jpg";
-     console.log(req.body.email);
-     collection.updateOne({"email":req.body.email},{$set: {"filename":filename}},function(err,ok)
-        {
-            console.log("ew");
-          if(err)
-          {
-              console.log(err);
-              console.log("error occured when inserted");
-          }
-          else
-          {
-              console.log("success");
-              res.send(filename);
-          }
+     var cursor1=collection.find({"email":req.body.email});
+     cursor1.count(function(err,ok)
+     {
+         if(err)
+         {
+            console.log(err);
+         }
+         else
+         {
+             if(ok===1)
+             {
+                 var filename=id(8)+".jpg";
+                 collection.updateOne({"email":req.body.email},{$set: {"filename":filename}},function(err,ok)
+                 {
+                     if(err)
+                     {
+                         console.log(err);
+                         console.log("error occured when updated");
+                     }
+                     else
+                     {
+                         console.log("success");
+                         res.send(filename);
+                     }
+                 });
+             }
+             else
+             {
+                 console.log("you are an invalid user");
+             }
+         }
+     });
+});
+router.post("/getprofile_id",function(req,res,next)
+{
+    var collection=_db.collection("users");
+    var cursor2=collection.find({"email":req.body.email});
+    cursor2.count(function(err,ok)
+    {
+       if(err)
+       {
+           console.log(err);
+       }
+       else
+       {
+           if(ok===1)
+           {
+              collection.find({"email":req.body.email}).forEach(function(x)
+              {
+                 var filename=x.profileid;
+                 res.send(filename);
+              });
+           }
+           else
+           {
+              console.log("you are an invalid user");
+           }
+       }
     });
 });
-
 router.post('/guest_login',function(req,res)     //GUEST LOGIN
 {
     var email = req.body.email;
@@ -436,43 +480,46 @@ router.post('/guest_login',function(req,res)     //GUEST LOGIN
     });
 });
 
-
-
 router.post("/forgot_password",function(req,res,next) {
      var collection=_db.collection("email");
      var cursor=collection.find({_id:req.body.email});
      cursor.count(function(err,ok)
      {
-         if(ok===1)
+         if(err)
          {
-             console.log("You are a valid user");
-             collection.updateone({_id:req.body.email},{$set:{"up":"n"}});
-             collection.find({_id:req.body.email}).forEach(function(x)
-             {
-                 var uid=x.id;
-                 send_invite(req.body.email,uid);
-             });
+             console.log(err);
          }
          else
          {
-            console.log("You are an invalid user");
+             if(ok===1)
+             {
+                 console.log("You are a valid user");
+                 collection.updateone({_id:req.body.email},{$set:{"up":"n"}});
+                 collection.find({_id:req.body.email}).forEach(function(x)
+                 {
+                     var uid=x.id;
+                     send_invite(req.body.email,uid);
+                 });
+             }
+             else
+             {
+                 console.log("You are an invalid user");
+             }
          }
      });
 
 });
-
-
 
 router.post('/profile_upload',function(req,res,next)       //PROFILE UPLOAD
 {
     console.log("get");
     var form = new formidable.IncomingForm();
     form.multiples = false;
-    form.uploadDir = "./public/assets/images/profileimages/";
+    form.uploadDir = path.join("./public/assets/images/profileimages/");
     form.on('file', function(field, file) {
         fs.rename(file.path, path.join(form.uploadDir,file.name), function(err)
         {
-            console.log("successfully  renamed");
+            console.log("succesfully  renamed");
         });
     });
     form.on('error', function(err) {
