@@ -514,7 +514,7 @@ router.post('/profile_upload',function(req,res,next)       //PROFILE UPLOAD
     console.log("get");
     var form = new formidable.IncomingForm();
     form.multiples = false;
-    form.uploadDir = path.join("./public/assets/images/profileimages/");
+    form.uploadDir = path.join("../yic/public/assets/images/profileimages/");
     form.on('file', function(field, file) {
         fs.rename(file.path, path.join(form.uploadDir,file.name), function(err)
         {
