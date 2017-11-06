@@ -312,7 +312,8 @@ var fun=function (req,res,email,name,role,id1,crypted) {
         name:name,
         role:role,
         password:crypted,
-        profile_id:p_id
+        profile_id:p_id,
+        status:"live"
     };
 
     var h=_db.collection("users");
@@ -372,16 +373,24 @@ router.post('/login',function(req,res)
     collection2.find({"email":req.body.email}).forEach(function(x){
       var e=x.email;
       var p=x.password;
-      var decipher=crypto.createDecipher("aes-256-ctr","d6F3Efeq");
+      var stat=x.status;
+      var uid=x._id;
+      var decipher=crypto.createDecipher("aes-256-ctr","d6F3Efeq");     //password decryption!
       var dec=decipher.update(p,"hex","utf8");
       dec +=decipher.final("utf8");
-      if((e===req.body.email)&&(dec===req.body.password))
+      if((e===req.body.email) && (dec===req.body.password) && (stat==="live") )
       {
-          //var dashses=req.session;
-          //dashses.email=req.body.email;
+
+
+          var ses=req.session;
+          ses.email=req.body.email;
+          ses.uid=uid;
           console.log("Login successfull");
           res.send("success");
-          //res.redirect(307,'/home');
+      }
+      else if(stat==="blocked")
+      {
+          res.send("blocked");
       }
       else
       {
