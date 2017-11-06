@@ -8,6 +8,10 @@ var bodyparser=require("body-parser");
 var crypto=require("crypto");
 var formidable = require('formidable');
 
+var sync=require('synchronize');
+
+
+
 router.use(session({
     secret: 'yicauthprivate',
     cookie:{maxAge:60*60*24*1000},
@@ -132,7 +136,7 @@ var invite1=function (req,res,userid,gid) {
 };
 
 
-var yic_id=function(req,res,gid)
+ var yic_id=function(req,res,gid)
 {
 
     var count=0;
@@ -176,12 +180,11 @@ var yic_id=function(req,res,gid)
 
     });
 
-
-
-
-
-
 };
+
+
+sync('yic_id');  //new update for synchronize code execution
+
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
