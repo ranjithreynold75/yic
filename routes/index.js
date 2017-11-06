@@ -10,6 +10,9 @@ var formidable = require('formidable');
 
 var sync=require('synchronize');
 
+var fiber=sync.fiber;
+var await=sync.await;
+var defer=sync.defer;
 
 
 router.use(session({
@@ -135,7 +138,7 @@ var invite1=function (req,res,userid,gid) {
     });
 };
 
-
+//sync('yic_id');  //new update for synchronize code execution
  var yic_id=function(req,res,gid)
 {
 
@@ -183,7 +186,7 @@ var invite1=function (req,res,userid,gid) {
 };
 
 
-sync('yic_id');  //new update for synchronize code execution
+
 
 
 /* GET home page. */
@@ -220,7 +223,9 @@ router.post('/user_invite',function(req,res){
             else
             {
                 console.log("yes");
-                yic_id(req,res,gid);
+              fiber( function () {
+                 await(yic_id(req,res,gid,defer()));
+              });
             }
         }
     });
