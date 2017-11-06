@@ -1,180 +1,126 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>YIC</title>
-    <!--STYLES-->
+    <title>Young Innovators Club</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
-    <link rel="stylesheet" href="/assets/css/animate.min.css">
-    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/assets/css/font-awesome.css">
-    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/assets/css/importer.less">
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
-    <!--toast css-->
-    <style>
-        #snackbar {
-            visibility: hidden;
-            min-width: 250px;
-            margin-left: -125px;
-            background-color: #69b4d7;
-            color: #fff;
-            text-align: center;
-            border-radius: 2px;
-            padding: 16px;
-            position: fixed;
-            z-index:9999999;
-            left: 50%;
-            bottom: 30px;
-            font-size: 17px;
-        }
+    <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
+    <link href="favicon.ico" rel="shortcut icon">
 
-        #snackbar.show {
-            visibility: visible;
-            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        }
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
 
-        @-webkit-keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
+    <!-- Bootstrap CSS File -->
+    <link href="stylesheets/bootstrap.css" rel="stylesheet">
 
-        @keyframes fadein {
-            from {bottom: 0; opacity: 0;}
-            to {bottom: 30px; opacity: 1;}
-        }
+    <!-- Libraries CSS Files -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="stylesheets/animate-css/animate.min.css" rel="stylesheet">
 
-        @-webkit-keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
-
-        @keyframes fadeout {
-            from {bottom: 30px; opacity: 1;}
-            to {bottom: 0; opacity: 0;}
-        }
-    </style>
-    <!--STYLES END-->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!-- Main Stylesheet File -->
+    <link href="assets/css/land_page/style.css" rel="stylesheet">
+    <link href="stylesheets/agency.min.css" rel="stylesheet">
+    <link href="stylesheets/logocard/logoflip.css" rel="stylesheet">
 
 </head>
 
-<body><!-- Section Intro Slider
-================================================== -->
-<div id="front" style="background-color: black">
+<body data-spy="scroll" data-target="#nav-menu-container">
+<div id="preloader"></div>
 
-    <img src="/assets/images/inno2.jpg" class="img-responsive" style="opacity:0.5;filter:alpha(opacity=30)">
-    <div class="item active">
-        <div class="carousel-caption">
-            <h2 data-animation="animated bounceInDown">
-            </h2>
-            <h1 data-animation="animated bounceInUp">
-                We Love to Create </h1>
-            <a href="#" class="btn btn-ghost btn-lg page-scroll" data-animation="animated fadeInLeft">Learn More</a><a href="#" class="btn btn-primary btn-lg" data-animation="animated fadeInRight" data-toggle="modal" data-target="#loginid">Login</a>
+<!--==========================
+  Head Section
+============================-->
+<section id="hero">
+    <div class="container-fluid hero-container">
+        <div class="card container-fluid">
+            <div class="flip-container">
+                <div class="flipper">
+                    <div class="front">
+                        <img class="img-centered" style="width:134.8px; height:87.6px" src="assets/images/Certificate for YIC_1.png">
+                    </div>
+                    <div class="back">
+                        <img class="img-centered" style="width:166.6px; height:76.6px" src="assets/images/JCI Logo - Copy.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wow zoomIn">
+            <h1 style="text-transform:none; font-size:50px">Young Innovators Club</h1>
+            <h2 style="font-family:Georgia; font-stretch:ultra-expanded; text-transform:none">We love to <span class="rotating">Collaborate, Innovate, Create</span></h2>
+            <div class="actions">
+                <a href="#services" class="btn-get-started" style="text-transform:none;width:256px">Know more</a>
+                <a class="btn-services" style="text-transform:none;width:256px" data-toggle="modal" data-target="#LoginModal">Login</a>
+            </div>
         </div>
     </div>
-</div>
-<!-- /.carousel -->
-<div id="page-top">
-    <nav id="#mainNav" class="navbar navbar-default" data-spy="affix" data-offset-top="600">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand page-scroll" href="#page-top"><img src="/assets/images/logo-yic.png" style="max-width:50px" alt="YIC"></a>
-            </div>
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right" >
-                    <li>
-                        <a class="page-scroll" href="#front" style="font-family: 'Roboto', sans-serif;letter-spacing: 2px;">Home</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#about">Motto</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#Colleges">Colleges</a>
-                    </li>
-                    <li>
-                        <a class="page-scroll" href="#team">Collaborates</a>
-                    </li>
+</section>
 
-                    <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
-                    </li>
-                    <a class="page-scroll btn btn-info" type="button" style="margin-top:4px" data-toggle="modal" data-target="#loginid">Login</a>
-                </ul>
-            </div>
+<!--==========================
+  Header Section
+============================-->
+<header id="header">
+    <div class="container">
+
+        <div id="logo" class="pull-left">
+            <a href="#hero"><img src="assets/images/Certificate for YIC_1.png" alt="" title="" /></a>
+            <!-- Uncomment below if you prefer to use a text image -->
+            <!--<h1><a href="#hero">Header 1</a></h1>-->
         </div>
 
+        <nav id="nav-menu-container">
+            <ul class="nav-menu" role="tablist">
+                <li class="menu-active"><a href="#hero">Home</a></li>
+                <li><a href="#services">Motto</a></li>
+                <li><a href="#about">Journey</a></li>
+                <li><a href="#portfolio">Colleges</a></li>
+                <li><a href="#team">Team</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+                <li class="btn btn-success"><a data-toggle="modal" data-target="#LoginModal">Login</a></li>
+            </ul>
 
-    </nav>
-</div>
 
-<!-- Section About
-================================================== -->
-<section id="about">
+        </nav><!-- #nav-menu-container -->
+    </div>
+
+</header><!-- #header -->
+<!--==========================
+  Moto Section
+============================-->
+<section id="services">
     <div class="container wow zoomIn">
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Our Motto</h2>
-                <h3 class="section-subheading text-muted">Incubate young talent to help productize their ideas and facilitate their career development.</h3>
+            <div class="col-md-12">
+                <h3 style="text-transform:none" class="section-title">Our Motto</h3>
+                <div class="section-title-divider"></div>
+                <p class="section-description" tyle="text-align:justify"> Incubate young talent to help productize their ideas and facilitate their career development.</p>
             </div>
         </div>
-    </div>
-</section>
-<!-- Section after about
-================================================== -->
-<section class="no-padding">
-    <div class="equal-heights">
-        <div class="col-md-4 bg-primary">
-            <div class="box">
+
+        <div class="row">
+            <div class="col-md-4 service-item">
                 <div class="service-icon"><i class="fa fa-handshake-o"></i></div>
-                <h2>Collaborate</h2>
-                <p>
-                    JCI India Engineering organizes tech events to recognize bright young students, and provides them the opportunity to collaborate with domain experts to develop their innovative ideas using the YIC platform.
-                </p>
-
+                <h4 style="text-transform:none" class="service-title"><a href="">Collaborate</a></h4>
+                <p class="service-description" style="text-align:justify">JCI India Engineering organizes tech events to recognize bright young students, and provides them the opportunity to collaborate with domain experts to develop their innovative ideas using the YIC platform.</p>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="box">
-                <div class="service-icon"><i class="fa fa-microchip"></i></div><h2>Innovate</h2>
-                <p>
-                    The innovation soul, spirit and drive at JCI India Engineering facilitates YIC to empower domain experts and YIC members to create innovative solutions to real world problems.
-                </p>
+            <div class="col-md-4 service-item">
+                <div class="service-icon"><i class="fa fa-microchip"></i></div>
+                <h4 style="text-transform:none" class="service-title"><a href="">Innovate</a></h4>
+                <p class="service-description" style="text-align:justify">The innovation soul, spirit and drive at JCI India Engineering facilitates YIC to empower domain experts and YIC members to create innovative solutions to real world problems.</p>
             </div>
-
-        </div>
-        <div class="col-md-4 bg-dark">
-            <div class="box">
+            <div class="col-md-4 service-item">
                 <div class="service-icon"><i class="fa fa-bullseye"></i></div>
-
-                <h2>Create</h2>
-                <p>
-                    Innovative solutions collaboratively created by YIC members are fine-tuned by JCI India Engineering domain leaders to add business value and make the solutions more marketable.
-                </p>
+                <h4 style="text-transform:none" class="service-title"><a href="">Create</a></h4>
+                <p class="service-description" style="text-align:justify">Innovative solutions collaboratively created by YIC members are fine-tuned by JCI India Engineering domain leaders to add business value and make the solutions more marketable.</p>
             </div>
         </div>
     </div>
 </section>
-<!-- Section Timeline
-================================================== -->
-<section id="journey" >
+
+<!--==========================
+  About Section
+============================-->
+
+<section id="about">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -184,125 +130,216 @@
         </div>
 
         <div class="row">
-            <div class="container wow zoomIn">
-            <section id="timeline">
-                <article>
-                    <div class="inner">
-      <span class="date">
-        <span class="month">2015</span>
-      </span>
-                        <h2>Our Beginning</h2>
-                        <p>Under the Academic Interface Program, JCI was a sponsor of a hackathon named 'Make-A-Thon16' which took place at Vellore Institue of Technology, Vellore Campus.That was the very first step and the beginning of Young Innovators Club.</p>
-                    </div>
-                </article>
-                <article>
-                    <div class="inner">
-      <span class="date">
-        <span class="month">2016</span>
-      </span>
-                        <h2>A Club is Born</h2>
-                        <p>The winners of the 'Make-A-Thon16' were provided with an offer of internship at JCI where they showcased their project ideas at Technovate16.They were also provided with the membership of the Young Innovators Club.This was how the Club was born.</p>
-                    </div>
-                </article>
-                <article>
-                    <div class="inner">
-      <span class="date">
-        <span class="month">2017</span>
-      </span>
-                        <h2>First YIC Presetation</h2>
-                        <p>We Sponsored JCI Makeathon for the first time in March 2017 in March 2017 We visited VIT University, Vellore for JCI Makeathon in April 2017. Winners of JCI Makeathon were invited as an interns at JCI in May 2017. They will be presenting ideas at BT&S Tech Challenge India 2017 on 13th June 2017.</p>
-                    </div>
-                </article>
-            </section>
+
+            <div class="col-lg-12">
+                <div class="container wow zoomIn container-fluid">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image container-fluid">
+                                <h4 style="font-family:Jokerman;"  class="text-center">
+
+
+                                    <br />2015
+                                    <br>
+                                </h4>
+
+                            </div>
+
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2015-2016</h4>
+                                    <h4 class="subheading">Our Beginning</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted text-justify">Under the Academic Interface Program, JCI was a sponsor of a hackathon named 'Make-A-Thon16' which took place at Vellore Institue of Technology, Vellore Campus.That was the very first step and the beginning of Young Innovators Club.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4 style="font-family:Jokerman" class="text-center">
+
+
+                                    <br />2016
+                                    <br>
+                                </h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4></h4>
+                                    <h4 class="subheading">A Club is Born</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted text-justify">The winners of the 'Make-A-Thon16' were provided with an offer of internship at JCI where they showcased their project ideas at Technovate16.They were also provided with the membership of the Young Innovators Club.This was how the Club was born.</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <h4 style="font-family:Jokerman" class="text-center">
+
+
+                                    <br />2017
+                                    <br>
+                                </h4>
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+
+                                    <h4 class="subheading">First YIC Presentation</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted text-justify">We Sponsored JCI Makeathon in March 2017. We visited VIT University, Vellore for JCI Makeathon in April 2017. Winners of JCI Makeathon were invited as an interns at JCI in May 2017. They will be presenting ideas at BT&S Tech Challenge India 2017 on 13th June 2017.</p>
+                                </div>
+                            </div>
+
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
 </section>
-<!---timeline-->
 
-<!-- Section Portfolio
-================================================== -->
-<!--1-->
-<!-- work section -->
-<!-- section start -->
-<!-- ================ -->
-<section id="Colleges"  style="background-color:#cccccc">
-    <h1 class="text-center title" id="portfolio">Colleges</h1>
-    <div class="separator"></div>
-    <p class="lead text-center"></p>
-    <br>
-    <div class="col-lg-offset-10"><button type="button" class="btn btn-info">View More</button></div>
-    </br>
-    <div class="row">
-        <!-- isotope filters end -->
+<!--==========================
+Stats Section
+============================-->
+<section id="subscribe">
+    <div class="container wow zoomIn">
+        <div class="row">
 
-        <!-- portfolio items start -->
-        <div class="col-md-4">
-            <div class="w3-container">
-                <div class="w3-card-4" style="width:100%">
-                    <img src="assets/images/clgimgs/VIT.jpg" alt="vit" style="width:100%">
-                    <div class="w3-container w3-center" style="padding:2%">
+            <div class="col-md-8">
+                <h3 class="subscribe-title"style="text-transform:none">Our Events</h3>
+
+            </div>
+            <div class="col-md-2 fa-pull-right subscribe-btn-container">
+                <a class="subscribe-btn" href="#">Dive In </a>
+            </div>
+        </div>
+        <!--<a data-toggle="modal" data-target="#myModal">
+            <div class="col-md-4 fa-pull-right">
+                <h1 class="subscribe-title text-center"><i class="fa fa-eye fa-2x center"></i><br /><br />@ViewBag.Count<br /><br /><small style="color:white">Total Views</small></h1>
+            </div>
+        </a>
+        <a href="@Url.Action("PartialUser","Users")">
+            <div class="col-md-4 fa-pull-right">
+                <h1 class="subscribe-title text-center"><i class="fa fa-id-badge fa-2x center"></i><br /><br />16<br /><br /><small style="color:white">Total Innovators</small></h1>
+
+            </div>
+        </a>
+        <a href="@Url.Action("PartialProject","Projects")">
+            <div class="col-md-4 fa-pull-right">
+                <h1 class="subscribe-title text-center"><i class="fa fa-briefcase fa-2x center"></i><br /><br />6<br /><br /><small style="color:white">Total Projects</small></h1>
+
+            </div>
+        </a>
+            -->
+
+    </div>
+
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content container-fluid">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            </div>
+            <div class="modal-body container-fluid" style="overflow:hidden">
+                <iframe width="300" height="600" src="http://localhost:62240/Projects/PartialProject" frameborder="0"></iframe>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+
+<!--End-->
+
+<!--==========================
+  Porfolio Section
+============================-->
+<section id="portfolio">
+    <div class="container wow zoomIn">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="section-title">Our Partner Colleges</h3>
+                <div class="section-title-divider"></div>
+                <p class="section-description">Special initiatives need special partners.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <a class="portfolio-item" style="" data-toggle="modal" data-target="#VITModal" href="">
+                    <div class="details">
+
                         <h4>VIT University</h4>
-                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#clg-1">View</a>
+                        <p style="color:teal; margin-left:5px; margin-right:5px; text-align:justify">VIT University, also known as Vellore Institute of Technology (VIT), is a private university in Tamil Nadu, India. Founded in 1984, as Vellore Engineering College, by G. Viswanathan, the institution offers 20 undergraduate, 34 postgraduate, four integrated and four research programs.</p>
                     </div>
-                </div>
+                </a>
             </div>
-        </div>
-        <!-- portfolio items start -->
-        <div class="col-md-4">
-            <div class="w3-container">
-                <div class="w3-card-4" style="width:100%">
-                    <img src="assets/images/clgimgs/BITS_Pilani_Campus.jpg" alt="Bits" style="width:100%">
-                    <div class="w3-container w3-center" style="padding:2%">
-                        <h4>BITS Pilani</h4>
-                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#clg-3">View</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- portfolio items start -->
-        <div class="col-md-4">
-            <div class="w3-container">
-                <div class="w3-card-4" style="width:100%">
-                    <img src="assets/images/clgimgs/kgp4.jpg" alt="kgp" style="width:100%">
-                    <div class="w3-container w3-center" style="padding:2%">
-                        <h4>IIT Kharagpur</h4>
-                        <a class="btn btn-default btn-block" data-toggle="modal" data-target="#clg-6">View</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--modals open-->
-    <div class="modal fade" id="clg-1" tabindex="-1" role="dialog" aria-labelledby="clg-1-label" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                    <h4 class="modal-title" id="project-12-label">VIT University</h4>
-                </div>
-                <div class="modal-body">
-                    <h3>About</h3>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <p>VIT University, also known as Vellore Institute of Technology (VIT), formerly known as Vellore Engineering College, is a private university in Tamil Nadu, India. Founded in 1984, as Vellore Engineering College, by G. Viswanathan, the institution offers 20 undergraduate, 34 postgraduate, four integrated and four research programs. It has campuses in Vellore and Chennai, Tamil Nadu, India. A new 200-acre campus called VIT-AP located at Amaravati (the new state capital of Andhra Pradesh state) is under construction. Classes will be started in July 2017. N. Chandrababu Naidu, the Chief Minister of Andhra Pradesh and M. Venkaiah Naidu, the Vice-president of India (then a Union Minister), participated in the foundation ceremony.[1] Foundation stone for VIT Bhopal campus at Sehore, Madhya Pradesh was laid down by Shivraj Singh Chouhan (Chief Minister of Madhya Pradesh) on 20 October 2016</p> </div>
-                        <div class="col-md-6">
-                            <img src="/assets/images/clgimgs/VIT.jpg" alt="VIT" style="width:100%;height: 100%">
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Modal end -->
-    <!-- portfolio items end -->
 
+            <div class="col-md-4">
+                <a class="portfolio-item" style="" data-toggle="modal" data-target="#BITSModal" href="">
+                    <div class="details">
+
+                        <h4>BITS Pilani</h4>
+                        <p style="color:teal; text-align:justify; margin-left:5px; margin-right:5px">Birla Institute of Technology & Science is an Indian institute of higher education and a deemed university under Section 3 of the UGC Act 1956.The university has 15 academic departments, and focuses primarily on undergraduate education in engineering and the sciences and on its management programme.</p>
+                    </div>
+                </a>
+
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-item" style="" data-toggle="modal" data-target="#KharagpurModal" href="">
+                    <div class="details">
+
+                        <h4>IIT - Kharagpur</h4>
+                        <p style="color:teal;text-align:justify;margin-left:5px; margin-right:5px">The Indian Institute of Technology Kharagpur (IIT Kharagpur) is a public engineering institution established by the government of India in 1951. It is the first of the IITs to be established, and is recognized as an Institute of National Importance by the Government of India.</p>
+                    </div>
+                </a>
+            </div>
+
+
+
+            <div class="col-md-4">
+                <a class="portfolio-item" style="" data-toggle="modal" data-target="#RoorkeeModal" href="">
+                    <div class="details">
+
+                        <h4>IIT - Roorkee</h4>
+                        <p style="color:teal;text-align:justify; margin-left:5px; margin-right:5px">Indian Institute of Technology Roorkee  formerly the University of Roorkee (1948 – 2001) is a public engineering university located in Roorkee, Uttarakhand, India.IIT Roorkee has 21 academic departments with a strong emphasis on scientific and technological education and research.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-item" style="" data-toggle="modal" data-target="#DYPATILModal" href="">
+                    <div class="details">
+
+                        <h4>DY Patil</h4>
+                        <p style="color:teal;text-align:justify;margin-left:5px; margin-right:5px">D.Y. Patil College of Engineering is permanently affiliated to the five star University of Pune. It is designated as a grade "A" College by the Directorate of Technical Education (DTE) Government of Maharashtra. The college courses are approved by All India Council of Technical Education and are recognized by the Institution of Engineers.</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-md-4">
+                <a class="portfolio-item" style="" data-toggle="modal" data-target="#RMKModal" href="">
+                    <div class="details">
+
+                        <h4>RMK College</h4>
+                        <p style="color:teal;text-align:justify;margin-left:5px; margin-right:5px">RMK Engineering College is a private engineering college in Tamil Nadu, India, governed by the Lakshmikanthammal Educational Trust. It is affiliated with Anna University, Chennai, and accredited by All India Council for Technical Education(AICTE) and National Board of Accreditation(NBA). It is a Telugu minority institution.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 </section>
-<!-- section end -->
-<!--Collab-->
+
+
+
 <!--==========================
   Team Section
 ============================-->
@@ -311,9 +348,9 @@
 
         <div class="row">
             <div class="col-md-12">
-                <h3 class="section-title text-center">Our Amazing Mentors</h3>
+                <h3 class="section-title">YIC Founder Team</h3>
                 <div class="section-title-divider"></div>
-                <p class="section-description"></p>
+                <p class="section-description">Our Leaders don't create followers, they create more leaders !</p>
             </div>
         </div>
 
@@ -321,7 +358,7 @@
             <div class="col-md-12">
                 <div class="container wow zoomIn">
                     <div class="member">
-                        <div class="pic"><img class="img-circle" src="assets/images/mentors/Subrata.jpg" style="width:256px;height:256px" alt=""></div>
+                        <div class="pic"><img class="img-circle" src="assets/images//mentors/Subrata.jpg" style="width:256px;height:256px" alt=""></div>
                         <h4>Subrata Bhattacharyya</h4>
                         <span>Chief Patron</span>
                         <div class="social">
@@ -336,7 +373,7 @@
             <div class="col-md-4">
 
                 <div class="member">
-                    <div style="padding:15px"><img class="img-circle" src="assets/images/mentors/ashok.jpg" style="width:200px;height:200px" alt=""></div>
+                    <div style="padding:15px"><img class="img-circle" src="assets/images//mentors/ashok.jpg" style="width:200px;height:200px" alt=""></div>
                     <h4>Ashok Sridharan</h4>
                     <span>President</span>
                     <div class="social">
@@ -349,7 +386,7 @@
 
             <div class="col-md-4">
                 <div class="member">
-                    <div style="padding:15px"><img class="img-circle" src="assets/Images/mentors/hariharasudhan.jpg" style="width:200px;height:200px" alt=""></div>
+                    <div style="padding:15px"><img class="img-circle" src="assets/images//mentors/hariharasudhan.jpg" style="width:200px;height:200px" alt=""></div>
                     <h4>Hariharasudhan Venugopal</h4>
                     <span>Technical Panel Head</span>
                     <div class="social">
@@ -363,7 +400,7 @@
 
             <div class="col-md-4">
                 <div class="member">
-                    <div style="padding:15px"><img class="img-circle" src="assets/images/mentors/nilankur.jpg" style="width:200px;height:200px" alt=""></div>
+                    <div style="padding:15px"><img class="img-circle" src="assets/images//mentors/nilankur.jpg" style="width:200px;height:200px" alt=""></div>
                     <h4>Nilankur Majumdar</h4>
                     <span>SR. General Manager</span>
                     <div class="social">
@@ -377,7 +414,7 @@
 
             <div class="col-md-6">
                 <div class="member">
-                    <div style="padding:15px"><img class="img-circle" src="assets/images/mentors/vivek.jpg" style="width:180px;height:180px" alt=""></div>
+                    <div style="padding:15px"><img class="img-circle" src="assets/images//mentors/vivek.jpg" style="width:180px;height:180px" alt=""></div>
                     <h4>Vivek Tripathi</h4>
                     <span>Joint Secretary</span>
                     <div class="social">
@@ -404,356 +441,363 @@
     </div>
 </section>
 
-<!-- Section Testimonials
-================================================== -->
-<div id="events" style="background-color:orange;padding: 0px;margin: 0px;width: 100%;background-color: black">
-    <div class="carousel slide"  data-ride="carousel" style="margin:0px;width:100%;">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" style="padding: 0px;margin: 0px;">
-            <div class="item active">
-                <img src="assets/images/events/event44.jpg" style="height: 330px;width: 100%;opacity:0.5;filter:alpha(opacity=30)" alt="ev">
-                <div class="carousel-caption" style="margin:0px;width:100%;">
-                    <div class="col-xs-1">
-                        <h2>Event 1</h2>
-                        </div>
-                    <div class="col-xs-5">
-                        <h2>12/12/16</h2></div>
-                    <div class="col-xs-3">
-
-                        <a href="#" class="btn btn-ghost btn-lg page-scroll" data-animation="animated fadeInLeft">View More</a>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="item">
-                <img src="assets/images/events/abt.jpg" style="height: 330px;width: 100%;opacity:0.5;filter:alpha(opacity=30)" alt="ev1">
-                <div class="carousel-caption" style="margin:0px;width:100%;">
-                    <div class="col-xs-1">
-                        <h2>FIRST YIC</h2>
-                    </div>
-                    <div class="col-xs-5">
-                        <h2>15/4/16</h2></div>
-                    <div class="col-xs-3">
-
-                        <a href="#" class="btn btn-ghost btn-lg page-scroll" data-animation="animated fadeInLeft">View More</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="assets/images/events/_RPR1785.jpg" style="height: 330px;width: 100;opacity:0.5;filter:alpha(opacity=30)%" alt="ev2">
-                <div class="carousel-caption" style="margin:0px;width:100%;">
-                    <div class="col-xs-1">
-                        <h2>Event 3</h2>
-                    </div>
-                    <div class="col-xs-5">
-                        <h2>12/5/17</h2></div>
-                    <div class="col-xs-3">
-
-                        <a href="#" class="btn btn-ghost btn-lg page-scroll" data-animation="animated fadeInLeft">View More</a>
-                    </div>
-                </div>
-
+<!--==========================
+  Contact Section
+============================-->
+<section id="contact">
+    <div class="container wow zoomIn">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="section-title" style="color:white">Contact Us</h3>
+                <div class="section-title-divider" style="color:white"></div>
+                <p class="section-description" style="color:white">Interested to know more ? We are just a click away !</p>
             </div>
         </div>
 
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev" style="width:12px">
-            <span class="glyphicon glyphicon-chevron-left"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next" style="width:12px">
-            <span class="glyphicon glyphicon-chevron-right"></span>
-            <span class="sr-only">Next</span>
-        </a>
-    </div>
-</div>
-
-
-
-
-<!-- Section Contact
-================================================== -->
-<section id="contact" class="bg-dark">
-    <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-center">
-                <h2 class="section-heading" style="color: whitesmoke">CONTACT <b>US</b></h2>
-                <p>
-                    Ready to start your next project with us? That's great! Give us a call or send us an email and we will get back to you as soon as possible!
-                </p>
-                <div class="regularform">
-                    <div class="done">
-                        <div class="alert alert-success">
-                            <button type="button" class="close" data-dismiss="alert">×</button>
-                            Your message has been sent. Thank you!
-                        </div>
+            <div class="col-md-3 col-md-push-2">
+                <div class="info">
+                    <div>
+                        <i class="fa fa-map-marker"></i>
+                        <p style="color:white">I Think Campus<br>Mumbai</p>
                     </div>
-                    <form method="post" action="contact.php" id="contactform" class="text-left" >
-                        <div class="row" style="color: black">
-                            <div class="col-md-12">
-                                <input name="name" style="border-radius: 10px" type="text" class="col-md-12" placeholder="Your Name *">
-                            </div>
+
+                    <div>
+                        <i class="fa fa-envelope"></i>
+                        <p style="color:white">BE-India-IEC-YIC@jci.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5 col-md-push-2">
+                <div class="form">
+                    <div id="sendmessage">Your message has been sent. Thank you!</div>
+                    <div id="errormessage"></div>
+                    <form action="" method="post" role="form" class="contactForm">
+                        @Html.AntiForgeryToken()
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
                         </div>
-                        <div class="row" style="color: black">
-                            <div class="col-md-12">
-                                <input name="email" style="border-radius: 10px" type="email" class="col-md-12" placeholder="E-mail address *">
-                            </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
                         </div>
-                        <div class="row" style="color: black">
-                            <div class="col-md-12">
-                                <textarea name="comment" style="border-radius: 10px" class="col-md-12" placeholder="Message *"></textarea>
-                            </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
                         </div>
-                        <input type="submit" id="submit" class="pull-right contact submit btn btn-primary btn-xl" value="Send message">
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
                     </form>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <div class="container">
-                    <div class="wow fadeInLeft">
-                        <p style="letter-spacing: 2px;color: #0c8ec3"><strong>&copy;Young Innovators Club</strong></p>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>
 
-<!--login modal-->
-<div class="modal fade" id="loginid" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">x</button>
-                <h3 class="col-lg-offset-5">Login</h3>
-                <form method="post" action='' name="login_form">
-                    <br>
-                    <div class="col-lg-offset-2">
-                        <div class="col-xs-10">
-                            <div class="input-group">
-                                <input id="email" type="text" class="form-control input-lg" name="email" placeholder="Email">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            </div>
-                        </div>
-                        </br>
-                        </br>
-                        </br>
-                        <div class="col-xs-10">
-                            <div class="input-group">
-                                <input id="password" type="password" class="form-control input-lg" name="password" placeholder="Password">
-                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <br>
-                    </br>
-                    <div class="col-lg-offset-5">
-                        <p>
-                            <button id="login_button" class="btn btn-info">Sign in</button>
-                        <p>
-                            <a href="#">Forgot Password</a>
-                        </p>
-                    </div>
-                </form>
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="copyright">
+                    &copy; Copyright <strong>Johnson Controls</strong>
+                </div>
             </div>
-            <div class="modal-footer">
-                <div class="text-center"><a href="#" data-toggle="modal" data-target="#guestid" data-dismiss="modal">Are you a Guest?</a></div>
+        </div>
+    </div>
+</footer>
+<!-- #footer -->
+
+<!-- Partial Modal -->
+
+<!-- Modal Structure -->
+<div class="modal" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="col-md-12">
+        <div class="">
+            <style>
+                form {
+                    padding: 20px;
+                    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 15px 0 rgba(0,0,0,0.12) !important;
+                }
+
+                p {
+                    margin-bottom: 10px;
+                    margin-top: 10px;
+                    text-align: center;
+                }
+
+                .blue {
+                    color: #337ab7;
+                }
+
+                .lflip {
+                    -webkit-perspective: 800px;
+                    perspective: 800px;
+                    position: relative;
+                }
+
+                .lflip .lcard.lflipped {
+                    -webkit-transform: rotateY(-180deg);
+                    transform: rotateY(-180deg);
+                }
+
+                .lflip .lcard {
+                    height: 100%;
+                    -webkit-transform-style: preserve-3d;
+                    -webkit-transition: 0.5s;
+                    transform-style: preserve-3d;
+                    transition: 0.5s;
+                }
+
+                .lflip .lcard .lface {
+                    -webkit-backface-visibility: hidden;
+                    backface-visibility: hidden;
+                    z-index: 2;
+                }
+
+                .lflip .lcard .lfront {
+                    position: absolute;
+                    width: 100%;
+                    z-index: 1;
+                }
+
+                .lflip .lcard .lback {
+                    -webkit-transform: rotateY(-180deg);
+                    transform: rotateY(-180deg);
+                }
+            </style>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4"></div>
+                    <div class="col-md-offset-4 col-md-4">
+                        <div class="lflip">
+                            <div class="lcard">
+                                <div class="lface lfront">
+                                    <div class="panel panel-default center center-block">
+                                        <div class="modal-header" align="center">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                            </button>
+                                            <h3 style="font-family:Georgia; margin-top:25px; text-transform:none; color:teal;" class="text-center">Young Innovators Club</h3><div>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal">
+                                            <div class="col-md-offset-1 col-md-10 fa-pull-left">
+                                            </div>
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <div class="col-md-offset-1 col-md-10 fa-pull-left"></div>
+                                            <br />
+                                            <br />
+                                            <input type="submit" value="Login" style="background-color:#03c4eb;margin-right:42px; margin-top:10px;color:white; padding-right:15px; padding-left:15px" class="btn btn-get-primary fa-pull-right" />
+                                            <br />
+                                            <br />
+
+                                            <hr />
+                                            <p class="text-center"><a href="">Forgot Password</a></p>
+
+                                            <hr>
+                                            <p class="text-center">
+                                                <a href="#" class="fliper-btn">Are You A guest ?</a>
+                                            </p>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="lface lback">
+
+                                    <div class="panel panel-default center center-block">
+                                        <div class="modal-header" align="center">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                            </button>
+                                            <h3 style="font-family:Georgia; margin-top:25px; text-transform:none; color:teal;" class="text-center">Young Innovators Club</h3>
+                                            <!--<img class="img-centered" style="width:168.5px; height:109.5px" id="img_logo" src="~/Images/logo/Certificate for YIC_1.png"> -->
+
+
+                                            <div>
+                                                <p>@ViewBag.LoginMessage</p>
+                                            </div>
+                                        </div>
+                                        <div class="form-horizontal" >
+                                            <p class="text-center" style="color:teal">
+                                                We are Glad to have you here.
+                                            </p>
+
+                                            <div class="col-md-offset-1 col-md-10 fa-pull-left">
+
+                                            </div>
+
+                                            <input type="submit" value="Login" style="background-color:#03c4eb;margin-top:20px;margin-right:42px;color:white; padding-right:15px; padding-left:15px" class="btn btn-get-primary fa-pull-right" />
+
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <br />
+
+
+                                            <hr />
+                                            <p class="text-center colo">
+                                                <a class="text-center">*Please use Email-ID as YIC Username .</a>
+                                            </p>
+                                            <hr />
+                                            <p class="text-center">
+                                                <a href="#" class="fliper-btn text-center">Are You A YIC Member?</a>
+                                            </p>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
             </div>
         </div>
     </div>
 </div>
-</div>
-<!--Guest login-->
-<div class="modal fade" id="guestid" role="dialog">
-    <div class="modal-dialog">
+<!-- Modal -->
 
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="close" data-dismiss="modal">x</button>
-                <h3 class="col-lg-offset-5">Guest Login</h3>
-                <form method="post" action='' name="login_form">
-                    <br>
-                    <div class="col-lg-offset-2">
-                        <div class="col-xs-10">
-                            <div class="input-group">
-                                <input id="guest_email" type="text" class="form-control input-lg" name="email" placeholder="Email">
-                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                    </br>
-                    </br>
-                    <div class="col-lg-offset-5">
-                        <button id="guest_login_button" class="btn btn-info">Sign in</button>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <div class="text-center"><a href="#" data-toggle="modal" data-target="#loginid" data-dismiss="modal">Are you a User?</a></div>
-            </div>
-        </div>
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
-    </div>
-</div>
-</div>
-<!--toast-->
-<div id="snackbar">Enter Email and Password</div>
+<!-- Required JavaScript Libraries -->
+<script src="assets/scripts/jquery.js"></script>
 
-<!-- SCRIPTS-->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-<script src="assets/scripts/parallax.js"></script>
-<script src="assets/scripts/contact.js"></script>
-<script src="assets/scripts/countto.js"></script>
-<script src="assets/scripts/jquery.easing.min.js"></script>
-<script src="assets/scripts/wow.min.js"></script>
-<script src="assets/scripts/common.js"></script>
+<script src="assets/scripts/bootstrap.min.js"></script>
+<script src="assets/scripts/superfish/hoverIntent.js"></script>
+<script src="assets/scripts/superfish/superfish.min.js"></script>
+<script src="assets/scripts/morphext/morphext.min.js"></script>
+<script src="assets/scripts/wow/wow.min.js"></script>
+<script src="assets/scripts/stickyjs/sticky.js"></script>
+<script src="assets/scripts/easing/easing.js"></script>
+<script src="assets/scripts/agency.min.js"></script>
+
+<!-- Template Specisifc Custom Javascript File -->
+<script src="assets/scripts/custom.js"></script>
+
+<!-- <script src="~contact"></script> -->
+<!-- VITModal-->
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="assets/scripts/smoothscroll.js"></script>
+
+<script>
+    $('.fliper-btn').click(function () {
+        $('.lflip').find('.lcard').toggleClass('lflipped');
+
+    });
+</script>
 <script>
     $(document).ready(function () {
-        var profile_id='';
-        $.ajax({
-            url: '/login',
-            type: "POST",
-            data: {
-                email: localStorage.getItem("email")
-            },
-            success: function(response) {
-                if(response=='success')
-                {
-                    localStorage.setItem("email", user);
-                    window.location.href='/home';
-                }
-                else
-                {
-                    $('#snackbar').text("Invalid Credentials");
-                    myFunction();
-                }
-            },
-            error: function(xhr, status, error) {
+        $(document).on("scroll", onScroll);
 
-            }
-        });
-
-        $('#login_button').on('click',function (e) {
+        //smoothscroll
+        $('a[href^="#"]').on('click', function (e) {
             e.preventDefault();
-            var  user=$('#email').val();
-            var pass=$('#password').val();
-            if((!user.length>0) && (!(pass.length)>0)){
-                $('#snackbar').text("Enter the fields");
-                myFunction();
-            }
-            else if(!user.length>0){
-                $('#snackbar').text("Enter username");
-                myFunction();
-            }
-            else if(!pass.length>0)
-            {
-                $('#snackbar').text("Enter password");
-                myFunction();
-            }
-            else{
-                validatelogin(user,pass);
-            }
+            $(document).off("scroll");
 
-        })
+            $('a').each(function () {
+                $(this).removeClass('active');
+            })
+            $(this).addClass('active');
 
-        $('#guest_login_button').on('click',function (e) {
-            e.preventDefault();
-            var email=$('#guest_email').val();
-            if(!email.length>0)
-            {
-                $('#snackbar').text("Enter your email id");
-                myFunction();
-            }
-            else{
-                validatelogin1(email);
-            }
+            var target = this.hash,
+                menu = target;
+            $target = $(target);
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top + 2
+            }, 500, 'swing', function () {
+                window.location.hash = target;
+                $(document).on("scroll", onScroll);
+            });
         });
     });
-    function validatelogin(user,pass) {
-        var emailReg =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (!emailReg.test(user)) {
-            $('#snackbar').text("Invalid email");
-            myFunction();
-        }
-        else
-        {
-            $('#snackbar').text("Sending Request");
-            myFunction();
-            $.ajax({
-                url: '/login',
-                type: "POST",
-                data: {
-                    email: user,
-                    password: pass
-                },
-                success: function(response) {
-                    if(response=='success')
-                    {
-                        localStorage.setItem("email", user);
-                        window.location.href='/home';
-                    }
-                    else
-                    {
-                        $('#snackbar').text("Invalid Credentials");
-                        myFunction();
-                    }
-                },
-                error: function(xhr, status, error) {
+</script>
+<script>
+    $('body').scrollspy({ target: '#nav-menu-container' })
 
-                }
-            });
-        }
-    }
-    function validatelogin1(user) {
-        var emailReg =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-        if (!emailReg.test(user)) {
-            $('#snackbar').text("Invalid email");
-            myFunction();
-        }
-        else
-        {
-            $('#snackbar').text("Sending Request");
-            myFunction();
-            $.ajax({
-                url: '/guest_login',
-                type: "POST",
-                data: {
-                    email: user
-                },
-                success: function(response) {
-                    if(response=='success')
-                    {
-                        localStorage.setItem("email", user);
-                        window.location.href='/home';
-                    }
-                    else
-                    {
-                        $('#snackbar').text("Invalid Credentials");
-                        myFunction();
-                    }
-                },
-                error: function(xhr, status, error) {
+</script>
 
-                }
+
+
+<script>
+    $(document).ready(function () {
+        $(document).on("scroll", onScroll);
+        //smoothscroll
+        $('li a[href^="#"]').on('click', function (e) {
+            e.preventDefault();
+            $(document).off("scroll");
+
+            $('li a').each(function () {
+                $(this).removeClass('active');
+            })
+            $(this).addClass('active');
+
+            var target = this.hash,
+                menu = target;
+            $target = $(target);
+            $('html, body').stop().animate({
+                'scrollTop': $target.offset().top + 2
+            }, 500, 'swing', function () {
+                window.location.hash = target;
+                $(document).on("scroll", onScroll);
             });
-        }
-    }
-    function myFunction() {
-        var x = document.getElementById("snackbar")
-        x.className = "show";
-        setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+        })
+    });
+
+    function onScroll(event)
+    {
+        var scrollPos = $(document).scrollTop();
+        $('#nav-menu-container a').each(function () {
+            var currLink = $(this);
+            var refElement = $(currLink.attr("href"));
+            if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
+                //  $('#nav-menu-container ul li a').removeClass("active");
+                $('#nav-menu-container ul li').removeClass("active");
+                currLink.addClass("active");
+            }
+            else {
+                currLink.removeClass("active");
+                $('#nav-menu-container ul li').removeClass("menu-active");
+            }
+        });
     }
 </script>
-<!--SCRIPITS END-->
+
+
+
+
+
+
+<!--   <a class="left carousel-control" href="#myCarousel5" data-slide="prev">
+       <span class="glyphicon glyphicon-chevron-left"></span>
+       <span class="sr-only">Previous</span>
+   </a>
+   <a class="right carousel-control" href="#myCarousel5" data-slide="next">
+       <span class="glyphicon glyphicon-chevron-right"></span>
+       <span class="sr-only">Next</span>
+   </a> !-->
+
+
+
+
+
 </body>
+
 </html>
