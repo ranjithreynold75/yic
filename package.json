@@ -28,7 +28,7 @@
     "synchronize": "^2.0.0"
   },
   "engines": {
-    "node": "6.11.0",
+    "node": "latest",
     "npm": "3.10.10"
   }
 }
